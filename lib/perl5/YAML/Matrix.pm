@@ -24,8 +24,7 @@ sub minimal_events_for_framework {
         $args{no_quoting_style} = 1;
     }
     elsif ($type eq 'rapid') {
-        $args{no_quoting_style} = 1;
-        $args{no_flow_indicator} = 1;
+        $args{no_explicit_doc} = 1;
     }
     elsif ($type eq 'flow') {
         $args{no_flow_indicator} = 1;
@@ -108,7 +107,7 @@ sub hsyaml_event_to_event {
 sub rapidyaml_event_to_event {
     my (@events) = @_;
     for my $event (@events) {
-        $event =~ s/^(\=VAL (&\S+ )?(<[^>]+> )?)["']/$1:/;
+        $event =~ s/^\+DOC ---/+DOC/;
     }
     return @events;
 }
