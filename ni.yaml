@@ -1,5 +1,10 @@
 ---
+c-libfyaml.event:       []
 c-libyaml.event:        [ empty-key ]
+cpp-rapidyaml.event:    [ complex-key, duplicate-key ]
+cpp-rapidyaml.yaml:     [ complex-key, duplicate-key ]
+cpp-rapidyaml.json:     [ complex-key, duplicate-key ]
+cpp-rapidengine.event:  [ duplicate-key ]
 dotnet-yamldotnet.json: [ local-tag, unknown-tag ]
 java-snakeyaml.event:   [ empty-key ]
 java-snakeyaml.json:    [ empty-key, local-tag, unknown-tag ]
